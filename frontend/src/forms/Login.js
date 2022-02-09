@@ -30,13 +30,22 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(formData);
     const { email, password } = formData;
+    // const { email, password } = {
+    //   email: "paras.pa1239@gmail.com",
+    //   password: "8820",
+    // };
     const user = { email, password };
     dispatch(login(user));
   };
+
+  // auth.isAuthenticated = true;
+
   if (auth.isAuthenticated) {
     return <Navigate to="/" />;
   }
+  // return <Navigate to="/" />;
   return (
     <div className="main">
       <div id="logo">
